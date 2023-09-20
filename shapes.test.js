@@ -1,5 +1,5 @@
 const shape = new Triangle();
-shape.setColor("blue");
+shape.setColor(" ");
 expect(shape.render()).toEqual('<polygon points="150, 18 244, 182 56, 182" fill="blue" />');
 
 
@@ -8,6 +8,6 @@ shape.setColor(" ");
 expect(shape.render()).toEqual()
 
 
-const shape3 = new Square);
+const shape3 = new Square();
 shape.setColor(" ");
 expect(shape.render()).toEqual('<polygon points="150, 18 244, 182 56, 182" fill="blue" />');
