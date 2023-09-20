@@ -1,11 +1,27 @@
-const inquirer = require ("inquirer");
-const fs = require("fs");
-const shape = require("./shapes");
-
+const inquirer = request ("inquirer");
+const fs = request("fs");
+const shapes = require("./lib/shapes");
 
 // const shape = new Triangle();
 // shape.setColor("blue");
 // expect(shape.render()).toEqual('<polygon points="150, 18 244, 182 56, 182" fill="blue" />');
+
+
+function generateShape(response) {
+
+    const { Characters, Colors, Shapes, ShapeColor} = response
+    if (Shapes == "circle") {
+        let newCircle = new Circle(Characters, Colors, Shapes, ShapeColor)
+        return newCircle.render();
+    } if (Shapes == "triangle") {
+        let newTriangle = new Triangle(Characters, Colors, Shapes, ShapeColor)
+        return newTriangle.render();
+    } if (Shapes == "square") {
+        let newSquare = new Square(Characters, Colors, Shapes, ShapeColor)
+        return newSquare.render();
+    }
+}
+
 
 const questions = [
     {
@@ -27,8 +43,8 @@ const questions = [
         message: "What shape would you like?",
         name: "Shapes",
         choices: [
-            "triangle",
             "circle",
+            "triangle",
             "square"
         ]
     },
@@ -63,9 +79,10 @@ const writeToSVG = (filename, data) => {
 // function init() { }
 
 const init = () => {
-    inquirer.prompt (questions) 
+    inquirer
+    .prompt (questions) 
     .then((response) => {
-            writeToSVG("logo.SVG", shape (response));
+            writeToSVG("logo.SVG", generateShape(response));
     })
     .catch ((error) => {
         console.error(error);
