@@ -105,4 +105,4 @@ class Circle extends Shapes {
             }
 
 
-
+module.exports = generateShape
