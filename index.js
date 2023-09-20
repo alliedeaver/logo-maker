@@ -1,11 +1,11 @@
+//create variables for proper inclusion of packages we need 
+
 const inquirer = request ("inquirer");
 const fs = request("fs");
 const shapes = require("./lib/shapes");
 
-// const shape = new Triangle();
-// shape.setColor("blue");
-// expect(shape.render()).toEqual('<polygon points="150, 18 244, 182 56, 182" fill="blue" />');
 
+//function to generate the new shapes
 
 function generateShape(response) {
 
@@ -22,6 +22,7 @@ function generateShape(response) {
     }
 }
 
+//questions that user will answer to generate the logo
 
 const questions = [
     {
@@ -94,31 +95,3 @@ const init = () => {
 
 init ();
 
-
-// const asyncreadData = async () => {
-
-//     try  {  const json = await readFile('./data/post.json', 'utf-8')  
-//     const blogData = JSON.parse(json);
-//     const post = new BlogPost(
-//       blogData.title,
-//       blogData.text,
-//       blogData.author,
-//       blogData.createdOn
-//     )}};
-  
-//     const html = post.render();
-  
-//     await writeFile('./dist/post.html', html);
-        
-//     console.log('Created post.html')
-  
-//    .catch (error) => {
-//     console.error(err);
-//     console.log("Something went wrong!");
-      
-//     }
-  
-//   // TODO: Update the code below so that the exception is caught and a message is logged in the terminal.
-  
-  
-//     f();
